@@ -18,7 +18,6 @@ public class EntrancePage {
 
     private final By inputText = By.xpath(".//*[text()='Вход']");
 
-
     public EntrancePage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }

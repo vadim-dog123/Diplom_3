@@ -1,49 +1,26 @@
 package ru.yandex.praktikum;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.junit4.DisplayName;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
-
-public class SectionConstructorTest {
-    WebDriver driver;
-
-    @Before
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-    }
-
-    @After
-    public void tearDown() {
-        driver.quit();
-    }
-
-
+@DisplayName("Раздел «Конструктор»")
+public class SectionConstructorTest extends BaseTest {
     @Test
     @DisplayName("Переход к разделу «Булки»")
     public void rollsTest() {
-        assertEquals(new MainPage(driver).open().rollsButtonClick().fillingChapterText(),
-                "Начинки");
+        assertEquals(new MainPage(driver).open().fillingButtonClick().rollsButtonClick().getSelectedIngredientText(), "Булки");
     }
 
     @Test
     @DisplayName("Переход к разделу «Соусы»")
     public void saucesTest() {
-
+        assertEquals(new MainPage(driver).open().saucesButtonClick().getSelectedIngredientText(), "Соусы");
     }
 
     @Test
     @DisplayName("Переход к разделу «Начинки»")
     public void fillingTest() {
-
+        assertEquals(new MainPage(driver).open().fillingButtonClick().getSelectedIngredientText(), "Начинки");
     }
 }

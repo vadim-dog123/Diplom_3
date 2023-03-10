@@ -19,18 +19,13 @@ public class MainPage {
     //Кнопка "Конструктор"
     private final By constructorButton = By.className("AppHeader_header__link__3D_hX");
     //Кнопка "Булки"
-    private final By rollsButton = By.xpath(".//div[1]/div[1]");
+    private final By rollsButton = By.xpath(".//section[1]/div[1]/div[1]");
     //Кнопка "Соусы"
-    private final By saucesButton = By.xpath(".//div[1]/div[2]");
+    private final By saucesButton = By.xpath(".//section[1]/div[1]/div[2]");
     //Кнопка "Начинка"
-    private final By fillingButton = By.xpath(".//div[1]/div[3]");
+    private final By fillingButton = By.xpath(".//section[1]/div[1]/div[3]");
 
-    //Раздел "Булки"
-    private final By rollsChapter = By.xpath(".//div[2]/h2[1]");
-    //Раздел "Соусы"
-    private final By saucesChapter = By.xpath(".//div[2]/h2[2]");
-    //Раздел "Начинка"
-    private final By fillingChapter = By.xpath(".//div[2]/h2[3]");
+    private final By selectedIngredientChapter = By.xpath(".//div[contains(@class,'tab_tab_type_current__2BEPc ')]");
 
     public MainPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -89,19 +84,9 @@ public class MainPage {
         return webDriver.findElement(assembleBurger).getText().equals("Соберите бургер");
     }
 
-    @Step("Текс ")
-    public String rollsChapterText() {
-        return webDriver.findElement(rollsChapter).getText();
-    }
-
-    @Step("Текс ")
-    public String saucesChapterText() {
-        return webDriver.findElement(saucesChapter).getText();
-    }
-
-    @Step("Текс начинки")
-    public String fillingChapterText() {
-        System.out.println(webDriver.findElement(fillingChapter).getText());
-        return webDriver.findElement(fillingChapter).getText();
+    @Step("Текс ыбранной категории")
+    public String getSelectedIngredientText() {
+        System.out.println(webDriver.findElement(selectedIngredientChapter).getText());
+        return webDriver.findElement(selectedIngredientChapter).getText();
     }
 }

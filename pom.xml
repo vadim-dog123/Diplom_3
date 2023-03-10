@@ -94,5 +94,4 @@
         <!-- версия Allure -->
         <allure.version>2.15.0</allure.version>
     </properties>
-
 </project>
