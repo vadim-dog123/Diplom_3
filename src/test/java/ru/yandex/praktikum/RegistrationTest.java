@@ -1,6 +1,9 @@
 package ru.yandex.praktikum;
 
+import groovy.transform.PackageScope;
+import groovyjarjarpicocli.CommandLine;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Epic;
 import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.junit4.Tag;
 import org.junit.Test;
@@ -20,6 +23,7 @@ public class RegistrationTest extends BaseTest {
         assertTrue("Страница входа не открыта", new EntrancePage(driver).isInputText());
     }
     @Test
+    @Tag("aaa")
     @DisplayName("Ошибка при некорректном пароле.")
     public void testIncorrectPassword() {
         var text = new RegistrationPage(driver).open().nameField("name" + new Random().nextInt(10000000)).emailField("email" + new Random().nextInt(10000000) + "@email.ru").passwordField("12345").registrationButtonClick().getInputError();

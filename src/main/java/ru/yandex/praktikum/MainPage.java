@@ -9,21 +9,24 @@ public class MainPage {
     //Сылка на главную страницу
     private final String mainPage = "https://stellarburgers.nomoreparties.site/";
     //Кнопка войти в акаунт
-    private final By loginButton = By.xpath(".//section[2]/div/button");
+  //  private final By loginButton = By.xpath(".//section[2]/div/button");
+    private final By loginButton = By.xpath(".//button[text() = 'Войти в аккаунт']");
     //Кнопка личный кабинет
-    private final By personalAccountButton = By.xpath(".//header/nav/a");
+   // private final By personalAccountButton = By.xpath(".//header/nav/a");
+    private final By personalAccountButton = By.xpath(".//p[text()='Личный Кабинет']");
     //Собери свой бургер
-    private final By assembleBurger = By.xpath(".//section[1]/h1");
+   // private final By assembleBurger = By.xpath(".//section[1]/h1");
+    private final By assembleBurger = By.xpath(".//h1[text()='Соберите бургер']");
     //Кнопка логотип
     private final By logoStellarBurgersButton = By.className("AppHeader_header__logo__2D0X2");
     //Кнопка "Конструктор"
     private final By constructorButton = By.className("AppHeader_header__link__3D_hX");
     //Кнопка "Булки"
-    private final By rollsButton = By.xpath(".//section[1]/div[1]/div[1]");
+    private final By rollsButton = By.xpath(".//span[text()='Булки']/..");
     //Кнопка "Соусы"
-    private final By saucesButton = By.xpath(".//section[1]/div[1]/div[2]");
+    private final By saucesButton = By.xpath(".//span[text()='Соусы']/..");
     //Кнопка "Начинка"
-    private final By fillingButton = By.xpath(".//section[1]/div[1]/div[3]");
+    private final By fillingButton = By.xpath(".//span[text()='Начинки']/..");
 
     private final By selectedIngredientChapter = By.xpath(".//div[contains(@class,'tab_tab_type_current__2BEPc ')]");
 

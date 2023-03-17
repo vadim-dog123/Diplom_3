@@ -9,16 +9,16 @@ public class RegistrationPage {
     //Сылка на главную страницу
     private final String registrationPage = "https://stellarburgers.nomoreparties.site/register";
     //имя
-    private final By nameField = By.xpath(".//fieldset[1]/div/div/input");
+    private final By nameField = By.xpath(".//label[text()='Имя']/../input");
     // email
-    private final By emailField = By.xpath(".//fieldset[2]/div/div/input");
+    private final By emailField = By.xpath(".//label[text()='Email']/../input");
     //  пароль
-    private final By passwordField = By.xpath(".//fieldset[3]/div/div/input");
+    private final By passwordField = By.xpath(".//label[text()='Пароль']/../input");
     // зарегистрироваться
-    private final By registrationButton = By.xpath(".//form/button");
+    private final By registrationButton = By.xpath(".//*[text() = 'Зарегистрироваться']");
     private final By loginButton = By.className("Auth_link__1fOlj");
     //сообщение о неправильном пароле
-    private final By inputError = By.xpath(".//fieldset[3]/div/p");
+    private final By inputError = By.xpath(".//p[text()='Некорректный пароль']");
 
     public RegistrationPage(WebDriver webDriver) {
         this.webDriver = webDriver;

@@ -10,9 +10,9 @@ public class EntrancePage {
     private final String entrancePage = "https://stellarburgers.nomoreparties.site/login";
 
     // email
-    private final By emailField = By.xpath(".//fieldset[1]/div/div/input");
+    private final By emailField = By.xpath(".//label[text()='Email']/../input");
     //  пароль
-    private final By passwordField = By.xpath(".//fieldset[2]/div/div/input");
+    private final By passwordField = By.xpath(".//label[text()='Пароль']/../input");
     //кнопка вход
     private final By entranceButton = By.xpath(".//form/button");
 
